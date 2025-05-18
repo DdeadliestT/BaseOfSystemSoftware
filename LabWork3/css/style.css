@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f1a;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Шапка сайта */
+header {
+  background: linear-gradient(90deg, #00f2ff, #7c00ff);
+  color: white;
+  padding: 25px 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+/* Навигационное меню */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav li {
+  margin: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #00fff7;
+  font-weight: bold;
+  border-bottom: 1px dashed #00fff7;
+  padding: 5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Основной контейнер страниц */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #1a1a2e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(128, 0, 255, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Заголовки */
+h2, h3 {
+  color: #00ffff;
+  margin-bottom: 15px;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  background-color: #0f0f1a;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #00ffea;
+  box-shadow: 0 0 8px #00ffea;
+}
+
+/* Кнопки */
+button {
+  background: #1a1aff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(26, 26, 255, 0.3);
+}
+
+button:hover {
+  background: #3d3dff;
+  box-shadow: 0 6px 16px rgba(61, 61, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Таблицы и индикаторы */
+.rainbow,
+.indicator,
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.tick {
+  height: 30px;
+  border-right: 1px solid #00ffff;
+}
+
+.tick.active {
+  background-color: #00ffff !important;
+}
+
+/* Результат калькулятора */
+#result {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+  border: 2px solid #00ffff;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: #1f1f3a;
+  color: #00ffff;
+  transition: background-color 0.3s ease;
+}
+
+.red-bg {
+  background-color: #ff3333 !important;
+  color: white;
+}

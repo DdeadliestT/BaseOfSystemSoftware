@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Стрелочный индикатор</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .indicator {
+      width: 300px;
+      height: 30px;
+      border: 2px solid #333;
+      margin: 20px auto;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .tick {
+      flex: 1;
+      border-right: 1px solid #333;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .active {
+      background-color: lightblue;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .digit {
+      padding: 15px;
+      font-size: 18px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .digit:hover {
+      background-color: #ddd;
+    }
+
+    body.red-bg {
+      background-color: red !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лабораторные работы по ОСПО</h1>
+  </header>
+
+  <div class="container">
+    <h2>Стрелочный индикатор</h2>
+
+    <div class="indicator" id="indicator">
+      <!-- 10 ticks -->
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+      <div class="tick"></div>
+    </div>
+
+    <div class="buttons">
+      <div class="digit" onclick="setValue('0')">0</div>
+      <div class="digit" onclick="setValue('1')">1</div>
+      <div class="digit" onclick="setValue('2')">2</div>
+      <div class="digit" onclick="setValue('3')">3</div>
+      <div class="digit" onclick="setValue('4')">4</div>
+      <div class="digit" onclick="setValue('5')">5</div>
+      <div class="digit" onclick="setValue('6')">6</div>
+      <div class="digit" onclick="setValue('7')">7</div>
+      <div class="digit" onclick="setValue('8')">8</div>
+      <div class="digit" onclick="setValue('9')">9</div>
+    </div>
+  </div>
+
+  <script src="../scripts/indicator.js"></script>
+</body>
+</html>

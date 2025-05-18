@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Задание 4</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Лабораторные работы по ОСПО</h1>
+  </header>
+
+  <div class="container">
+    <h2>Анкета</h2>
+
+    <div id="formSection">
+      <label>Имя: <input type="text" id="nameInput"></label><br><br>
+
+      <label>Возраст: <input type="number" id="ageInput" min="0"></label><br><br>
+
+      <label>Пол:</label>
+      <select id="genderInput">
+        <option value="">Выберите...</option>
+        <option value="М">Мужской</option>
+        <option value="Ж">Женский</option>
+      </select><br><br>
+
+      <label><input type="checkbox" id="mathSkill"> Знание математики</label><br>
+      <label><input type="checkbox" id="progSkill"> Знание программирования</label><br>
+      <label><input type="checkbox" id="higherEdu"> Высшее образование</label><br><br>
+
+      <label><input type="checkbox" id="agreeCheckbox"> Согласен с условиями</label><br>
+      <label>Комментарий: <input type="text" id="commentInput"></label><br><br>
+
+      <button id="submitBtn" onclick="submitForm()">Меня возьмут</button>
+    </div>
+
+    <div id="resultSection" style="display: none;">
+      <h3>Результат проверки:</h3>
+      <p id="checkResult"></p>
+
+      <button onclick="editForm()">Редактировать</button>
+    </div>
+  </div>
+
+  <script src="../scripts/task4.js"></script>
+</body>
+</html>

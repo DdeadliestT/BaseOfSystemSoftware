@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Присвоить админу имя</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #e9ffe8;
+      border: 1px solid #b2ecb0;
+      border-radius: 4px;
+      color: #1a7413;
+      font-weight: bold;
+      min-height: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Вывод значения переменной admin</h1>
+    <div class="input-container">
+        <input type="number" id="number1" placeholder="Число 1">
+        <span class="less-than"> </span>
+        <input type="number" id="number2" placeholder="Число 2">
+    </div>
+    <div class="result" id="output">Результат появится здесь</div>
+  </div>
+
+  <script>
+    // Объявляем переменные
+    let admin;
+    let name = "Алексей"; // ← Сюда можно вписать любое имя
+
+    // Присваиваем значение name переменной admin
+    admin = name;
+
+    // Выводим значение admin на страницу
+    document.getElementById("output").textContent = admin;
+  </script>
+
+</body>
+</html>

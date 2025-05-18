@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Радуга</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .rainbow {
+      display: table;
+      width: 700px;
+      height: 60px;
+      border-collapse: collapse;
+      margin: 20px auto;
+    }
+
+    .rainbow-row {
+      display: table-row;
+    }
+
+    .rainbow-cell {
+      display: table-cell;
+      border: 1px solid #333;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лабораторные работы по ОСПО</h1>
+  </header>
+
+  <div class="container">
+    <h2>Радуга</h2>
+
+    <table class="rainbow" id="rainbowTable">
+      <tbody>
+        <tr class="rainbow-row" id="rainbowRow">
+          <td class="rainbow-cell" style="background-color: red;"></td>
+          <td class="rainbow-cell" style="background-color: orange;"></td>
+          <td class="rainbow-cell" style="background-color: yellow;"></td>
+          <td class="rainbow-cell" style="background-color: green;"></td>
+          <td class="rainbow-cell" style="background-color: cyan;"></td>
+          <td class="rainbow-cell" style="background-color: blue;"></td>
+          <td class="rainbow-cell" style="background-color: purple;"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="controls">
+      <button onclick="shiftColors()">Сдвинуть вниз</button>
+      <button id="startBtn" onclick="startAutoShift()">Запустить анимацию</button>
+      <button id="stopBtn" onclick="stopAutoShift()" disabled>Остановить анимацию</button>
+    </div>
+  </div>
+
+  <script src="../scripts/rainbow.js"></script>
+</body>
+</html>
