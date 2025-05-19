@@ -7,24 +7,28 @@
   <style>
     .indicator {
       width: 300px;
-      height: 30px;
-      border: 2px solid #333;
-      margin: 20px auto;
+      height: 40px;
+      border: 2px solid #444;
+      margin: 30px auto;
       display: flex;
       overflow: hidden;
+      background-color: #1a1a1a;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     }
-
+  
     .tick {
       flex: 1;
       border-right: 1px solid #333;
       box-sizing: border-box;
-      background-color: white;
+      background-color: #1a1a2e;
+      transition: background-color 0.3s ease;
     }
-
-    .active {
-      background-color: lightblue;
+  
+    .tick.active {
+      background-color: #00ffff;
     }
-
+  
     .buttons {
       display: grid;
       grid-template-columns: repeat(5, 60px);
@@ -32,48 +36,74 @@
       justify-content: center;
       margin-top: 20px;
     }
-
+  
     .digit {
       padding: 15px;
       font-size: 18px;
       text-align: center;
       cursor: pointer;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
+      background-color: #2a2a2a;
+      color: #eee;
+      border: 1px solid #666;
       border-radius: 5px;
+      transition: all 0.3s ease;
     }
-
+  
     .digit:hover {
-      background-color: #ddd;
+      background-color: #3a3a3a;
+      border-color: #aaa;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
-
-    body.red-bg {
-      background-color: red !important;
+  
+    #resultMessage {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      font-weight: bold;
+      color: #ccc;
+      min-height: 30px;
+      max-width: 400px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 3px solid #888;
+      padding: 10px;
+      background-color: #1a1a1a;
+    }
+  
+    #resultMessage.red {
+      color: #ff6666;
+      border-left: 3px solid #ff6666;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Лабораторные работы по ОСПО</h1>
+    <h1>Лабораторная работа №3<br>Задание на повышенную оценку</h1>
   </header>
+
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
 
   <div class="container">
     <h2>Стрелочный индикатор</h2>
-
+  
+    <p>Горизонтальный индикатор из 10 делений, отображающий значение от 0 до 9.</p>
+  
+    <div id="resultMessage">Выберите число от 0 до 9</div>
+  
     <div class="indicator" id="indicator">
-      <!-- 10 ticks -->
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
-      <div class="tick"></div>
+      <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="tick"></div><div class="tick"></div><div class="tick"></div>
+      <div class="tick"></div><div class="tick"></div><div class="tick"></div>
       <div class="tick"></div>
     </div>
-
+  
     <div class="buttons">
       <div class="digit" onclick="setValue('0')">0</div>
       <div class="digit" onclick="setValue('1')">1</div>
@@ -85,6 +115,7 @@
       <div class="digit" onclick="setValue('7')">7</div>
       <div class="digit" onclick="setValue('8')">8</div>
       <div class="digit" onclick="setValue('9')">9</div>
+      <div class="digit" onclick="clearValue()" style="grid-column: span 5; background-color: #2a2a2a;">C</div>
     </div>
   </div>
 

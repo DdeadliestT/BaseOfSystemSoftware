@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Лабораторная работа №3</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .script-icon {
+      width: 100%;
+      height: 150px;
+      background-color: #0f0f1a;
+      color: #00ffff;
+      font-size: 60px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .task-content {
+      padding: 15px;
+    }
+
+    .task-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .task-desc {
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
+  <header>
+    <h1>Лабораторная работа №3</h1>
+  </header>
+
+  <!-- Индивидуальные задания -->
+  <div class="tasks-section">
+    <h2 class="section-title">Индивидуальные задания</h2>
+    <div class="task-grid">
+
+      <div class="task-card" data-lab="lab3-individual" onclick="window.location.href='pages/task1.html'">
+        <div class="script-icon">min(a,b)</div>
+        <div class="task-content">
+          <div class="task-title">Задание 1</div>
+          <div class="task-desc">Реализовать функцию min(a, b), которая возвращает меньшее из двух чисел.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-individual" onclick="window.location.href='pages/task2.html'">
+        <div class="script-icon" style="font-size: 40px;">name=""<br>admin=?</div>
+        <div class="task-content">
+          <div class="task-title">Задание 2</div>
+          <div class="task-desc">Объявление переменных admin и name, ввод имени через форму и вывод значения admin.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-individual" onclick="window.location.href='pages/task3.html'">
+        <div class="script-icon">
+          <img src="/images/18_plus_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Задание 3</div>
+          <div class="task-desc">Скрипт, спрашивающий возраст и уточняющий его корректность с помощью confirm.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-individual" onclick="window.location.href='pages/task4.html'">
+        <div class="script-icon">
+          <img src="images/anketa_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Задание 4</div>
+          <div class="task-desc">Анкета с проверкой данных, блокировкой полей после отправки и функцией check().</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-individual" onclick="window.location.href='pages/task5.html'">
+        <div class="script-icon">
+          <img src="images/resume_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Задание 5</div>
+          <div class="task-desc">Резюме, которое содержит краткую информацию о пользователе, опыт работы, образование, навыки и др.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- На повышенную оценку -->
+  <div class="tasks-section">
+    <h2 class="section-title">Задания на повышенную оценку</h2>
+    <div class="task-grid">
+
+      <div class="task-card" data-lab="lab3-advanced" onclick="window.location.href='pages/calculator.html'">
+        <div class="script-icon">
+          <img src="images/calculator_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Калькулятор</div>
+          <div class="task-desc">Калькулятор с цифровой клавиатурой, поддерживающий +, -, *, / и выводящий результат.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-advanced" onclick="window.location.href='pages/indicator.html'">
+        <div class="script-icon">
+          <img src="images/arrows_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Стрелочный индикатор</div>
+          <div class="task-desc">Горизонтальный индикатор из 10 делений, отображающий значение от 0 до 9.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-advanced" onclick="window.location.href='pages/rainbow.html'">
+        <div class="script-icon">
+          <img src="images/rainbow_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Радуга</div>
+          <div class="task-desc">Циклическая анимация радуги из 7 цветов с кнопками управления.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab3-advanced" onclick="window.location.href='pages/title-page.html'">
+        <div class="script-icon">
+          <img src="images/report_128px.png" />
+        </div>
+        <div class="task-content">
+          <div class="task-title">Титульный лист</div>
+          <div class="task-desc">Генератор HTML-титульного листа с полями кафедры, группы, преподавателя и студента.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

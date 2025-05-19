@@ -13,41 +13,102 @@
       display: block;
       font-weight: bold;
       margin-bottom: 5px;
+      color: #ccc;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 8px;
+      max-width: 100%;
+      padding: 10px;
       font-size: 16px;
+      border: 2px solid #444;
+      background-color: #0f0f1a;
+      color: #ddd;
+      border-radius: 6px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #888;
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    .error-message {
+      color: #ff6666;
+      min-height: 24px;
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2a2a2a;
+      color: #eee;
+      border: 2px solid #666;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3a3a3a;
+      border-color: #aaa;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
 
     .title-preview {
-      margin-top: 30px;
-      background-color: white;
-      border: 2px solid #ccc;
-      padding: 20px;
-      min-height: 300px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
+      background-color: #1a1a2e;
+      border: 2px solid #444;
+      padding: 30px;
+      min-height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      display: none;
     }
 
-    .university {
+    .university, .centered, .info, .footer {
       text-align: center;
-      margin-bottom: 40px;
+      line-height: 1.4;
+      font-size: 18px;
     }
 
-    .centered {
-      text-align: center;
-      margin: 40px 0;
+    .info p {
+      text-align: left;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    .button-wrapper{
+      display: flex;
+      justify-content: center;
+      gap: 10px;
     }
   </style>
 </head>
 <body>
+
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
   <header>
-    <h1>Лабораторные работы по ОСПО</h1>
+    <h1>Лабораторная работа №3<br>Задание на повышенную оценку</h1>
   </header>
 
   <div class="container">
-    <h2>Генератор титульного листа</h2>
+    <h2 class="title">Генератор титульного листа</h2>
+
+    <p>Создайте титульный лист для отчета по лабораторной работе.</p>
 
     <div class="form-group">
       <label for="department">Кафедра:</label>
@@ -56,20 +117,44 @@
 
     <div class="form-group">
       <label for="group">Группа:</label>
-      <input type="text" id="group" placeholder="Например: ИУ5-11М">
+      <input type="text" id="group" placeholder="Например: АДБ-22-08">
     </div>
 
     <div class="form-group">
       <label for="teacher">ФИО преподавателя:</label>
-      <input type="text" id="teacher" placeholder="Например: Петров А.А.">
+      <input type="text" id="teacher" placeholder="Например: Ковалев И.А.">
     </div>
 
     <div class="form-group">
       <label for="student">ФИО студента:</label>
-      <input type="text" id="student" placeholder="Например: Иванов С.В.">
+      <input type="text" id="student" placeholder="Например: Фомин И.Д.">
     </div>
 
-    <button onclick="generateTitlePage()">Сгенерировать</button>
+    <div class="button-wrapper">
+      <button onclick="generateTitlePage()">Сгенерировать</button>
+      <button onclick="openInNewWindow()">Открыть в новой вкладке</button>
+    </div>
+    <div class="error-message" id="errorMessage"></div>
+
+    <div class="title-preview" id="titlePreview">
+      <div class="university" id="previewUniversity"></div>
+
+      <div class="centered" id="previewCentered">
+        <h2 style="color: #fff;">ОТЧЕТ</h2>
+        <p>по лабораторной работе №3</p>
+        <p>по дисциплине "ОСПО"</p>
+      </div>
+
+      <div class="info" id="previewInfo">
+        <p><strong>Выполнил студент группы</strong> <span id="previewGroup"></span></p>
+        <p><span id="previewStudent"></span></p>
+        <p><strong>Преподаватель</strong> <span id="previewTeacher"></span></p>
+      </div>
+
+      <div class="footer" id="previewFooter">
+        <p>г. Москва 2025 г.</p>
+      </div>
+    </div>
   </div>
 
   <script src="../scripts/title-page.js"></script>

@@ -6,42 +6,73 @@
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     .rainbow {
-      display: table;
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
       height: 60px;
       border-collapse: collapse;
-      margin: 20px auto;
+      margin: 40px auto;
+      table-layout: fixed;
     }
-
+  
     .rainbow-row {
       display: table-row;
     }
-
+  
     .rainbow-cell {
       display: table-cell;
-      border: 1px solid #333;
+      width: calc(100% / 7);
+      height: 60px;
+      border: none;
+      transition: background-color 0.3s ease;
     }
-
+  
     .controls {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
     }
-
-    button {
+  
+    .controls button {
       padding: 10px 20px;
       font-size: 16px;
-      margin: 5px;
+      background-color: #2a2a2a;
+      color: #eee;
+      border: 2px solid #666;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0 10px;
+    }
+  
+    .controls button:hover {
+      background-color: #3a3a3a;
+      border-color: #aaa;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+  
+    .controls button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Лабораторные работы по ОСПО</h1>
+    <h1>Лабораторная работа №3<br>Задание на повышенную оценку</h1>
   </header>
 
-  <div class="container">
-    <h2>Радуга</h2>
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
 
+  <div class="container">
+    <h2 class="title">Радуга</h2>
+  
+    <p>Циклическая анимация радуги из 7 цветов с кнопками управления.</p>
+  
     <table class="rainbow" id="rainbowTable">
       <tbody>
         <tr class="rainbow-row" id="rainbowRow">
@@ -55,9 +86,9 @@
         </tr>
       </tbody>
     </table>
-
+  
     <div class="controls">
-      <button onclick="shiftColors()">Сдвинуть вниз</button>
+      <button onclick="shiftColors()">Сдвинуть</button>
       <button id="startBtn" onclick="startAutoShift()">Запустить анимацию</button>
       <button id="stopBtn" onclick="stopAutoShift()" disabled>Остановить анимацию</button>
     </div>

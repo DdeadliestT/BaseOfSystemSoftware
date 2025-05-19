@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Резюме</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/resume.css" />
+</head>
+<body>
+
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
+  <header style="padding: 25px 20px;">
+    <h1 style="text-align: center;">Фомин Илья Дмитриевич</h1>
+    <p style="text-align: center; font-size: 18px; color: #00ffff;">Junior Frontend Developer | Системное программирование | Git & GitHub</p>
+  </header>
+
+  <div class="resume-container">
+    <!-- Обо мне -->
+    <section id="about">
+      <h2>Обо мне</h2>
+      <p>Студент МГТУ «СТАНКИН», специальность 15.03.04 «Автоматизация технологических процессов и производств». Изучаю системное программирование, командную строку, Git, Bash, JavaScript, HTML/CSS. Увлекаюсь автоматизацией задач и разработкой пользовательских интерфейсов.</p>
+    </section>
+
+    <!-- Опыт работы -->
+    <section id="experience">
+      <h2>Опыт работы</h2>
+
+      <div class="job">
+        <p class="job-title">Frontend Developer (стажировка)</p>
+        <p class="job-company">ООО «ВебЛаб» | 2024 – н.в.</p>
+        <p class="job-description">Работал над созданием интерфейсов на HTML, CSS и JavaScript. Участвовал в тестировании и оптимизации кода. Использование Git для контроля версий.</p>
+        <button class="toggle-btn" onclick="toggleDescription(this)">Показать больше</button>
+      </div>
+
+      <div class="job">
+        <p class="job-title">Инженер по автоматизации</p>
+        <p class="job-company">ООО «Автоматика» | 2023 – 2024</p>
+        <p class="job-description">Создание bash-скриптов для автоматизации сборки проектов. Работа с системным ПО Windows и Linux. Настройка среды разработки.</p>
+        <button class="toggle-btn" onclick="toggleDescription(this)">Показать больше</button>
+      </div>
+    </section>
+
+    <!-- Образование -->
+    <section id="education">
+      <h2>Образование</h2>
+      <ul>
+        <li><strong>МГТУ «СТАНКИН»</strong>, 2022–2026</li>
+        <li><strong>IT-курсы</strong>, 2024</li>
+      </ul>
+    </section>
+
+    <!-- Навыки -->
+    <section id="skills">
+      <h2>Навыки</h2>
+      <div class="skills-grid">
+        <div class="skill-tag">HTML</div>
+        <div class="skill-tag">CSS</div>
+        <div class="skill-tag">JavaScript</div>
+        <div class="skill-tag">Git / GitHub</div>
+        <div class="skill-tag">Bash / Shell</div>
+        <div class="skill-tag">Windows CLI</div>
+        <div class="skill-tag">Soft Skills</div>
+        <div class="skill-tag">Работа в команде</div>
+      </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contacts">
+      <h2>Связаться со мной</h2>
+      <p class="contact-links">
+        <a href="#">Email</a> |
+        <a href="#">Telegram</a> |
+        <a href="#">LinkedIn</a> |
+        <a href="#">GitHub</a>
+      </p>
+
+      <form class="contact-form" onsubmit="submitForm(event)">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" placeholder="Ваше имя" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="example@example.com" required />
+
+        <label for="message">Сообщение:</label>
+        <textarea id="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
+
+        <button type="submit" class="submit-btn">Отправить</button>
+      </form>
+
+      <p style="margin-top: 20px; text-align: center;">
+        <a href="#" download>Скачать резюме (PDF)</a>
+      </p>
+    </section>
+  </div>
+  <script src="../scripts/task5.js"></script>
+</body>
+</html>

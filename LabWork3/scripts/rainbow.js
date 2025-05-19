@@ -10,10 +10,7 @@ function shiftDown() {
   const lastCell = cells.pop();
   const newCells = [lastCell, ...cells];
 
-  // Очистить текущие ячейки
   row.innerHTML = "";
-
-  // Перезаписать в новом порядке
   newCells.forEach(cell => row.appendChild(cell));
 }
 

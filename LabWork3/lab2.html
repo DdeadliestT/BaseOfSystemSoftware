@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Лабораторная работа №2</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .script-icon {
+      width: 100%;
+      height: 150px;
+      background-color: #0f0f1a;
+      color: #00ffff;
+      font-size: 60px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .task-content {
+      padding: 15px;
+    }
+
+    .task-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .task-desc {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Лабораторная работа №2</h1>
+  </header>
+
+  <!-- Кнопка НАЗАД -->
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
+  <div class="tasks-section">
+    <h2 class="section-title">Общая часть</h2>
+    <div class="task-grid">
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-task1.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Создание пустых папок</div>
+          <div class="task-desc">Создаёт несколько пустых папок по заданному шаблону.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-task2.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Удаление папок и содержимого</div>
+          <div class="task-desc">Полностью удаляет указанные папки вместе с файлами внутри.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-task3.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Создание папок с файлами</div>
+          <div class="task-desc">Создаёт структуру папок и заполняет их тестовыми файлами.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tasks-section">
+    <h2 class="section-title">Индивидуальная часть</h2>
+    <div class="task-grid">
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-indiv-task1.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Создание дерева папок</div>
+          <div class="task-desc">Создаёт несколько пустых папок по заданному шаблону.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-indiv-task2.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Создание файлов в папках</div>
+          <div class="task-desc">Заполняет папки тестовыми файлами.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-indiv-task3.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Удаление папок и содержимого</div>
+          <div class="task-desc">Полностью удаляет указанные папки вместе с файлами внутри.</div>
+        </div>
+      </div>
+
+      <div class="task-card" data-lab="lab2" onclick="window.location.href='pages/lab2-indiv-task4.html'">
+        <div class="script-icon">.sh</div>
+        <div class="task-content">
+          <div class="task-title">Объединенный скрипт</div>
+          <div class="task-desc">Объединяет функции создания и удаления папок и файлов в одном скрипте.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

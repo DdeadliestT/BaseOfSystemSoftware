@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Создание пустых папок</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
+  <header>
+    <h1>Лабораторная работа №2<br>Общая часть</h1>
+  </header>
+
+  <div class="container">
+    <h2 class="title">Создание пустых папок</h2>
+    <div class="code-wrapper">
+      <button class="copy-button" onclick="copyCode()">Копировать</button>
+      <pre id="code-placeholder" class="code-block">Загрузка скрипта...</pre>
+    </div>
+  </div>
+
+	<div id="copy-notification" class="notification success">
+		<span id="notification-text"></span>
+		<div class="notification-timer"></div>
+	</div>
+
+  <script src="../scripts/load-sh.js"></script>
+  <script>
+    fetchScript('https://raw.githubusercontent.com/DdeadliestT/BaseOfSystemSoftware/master/LabWork2/General/first_script.sh ', 'code-placeholder');
+
+	function copyCode() {
+	const code = document.getElementById("code-placeholder").textContent;
+	const notification = document.getElementById("copy-notification");
+
+	navigator.clipboard.writeText(code)
+		.then(() => {
+		showNotification("Скрипт скопирован", "success");
+		})
+		.catch(err => {
+		showNotification("Не удалось скопировать: " + err.message, "error");
+		});
+	}
+
+	function showNotification(message, type = "success") {
+		const notification = document.getElementById("copy-notification");
+		const timerBar = notification.querySelector(".notification-timer");
+
+		// Update text
+		notification.querySelector("#notification-text").textContent = message;
+		notification.className = `notification ${type}`;
+		notification.classList.add('show');
+
+		// Time bar
+		timerBar.style.animation = 'none';
+		void timerBar.offsetWidth;
+		timerBar.style.animation = 'timer-animation 2s linear forwards';
+
+		setTimeout(() => {
+		notification.classList.remove('show');
+		}, 2000);
+	}
+  </script>
+</body>
+</html>

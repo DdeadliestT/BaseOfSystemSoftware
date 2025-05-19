@@ -1,36 +1,36 @@
 function askAge() {
-    let age;
-    let confirmed = false;
-  
-    while (!confirmed) {
-      age = prompt("Сколько вам лет?");
-  
-      if (age === null) {
-        alert("Ввод отменён. Попробуйте снова.");
-        continue;
-      }
-  
-      age = age.trim();
-  
-      if (age === "") {
-        alert("Пожалуйста, введите ваш возраст.");
-        continue;
-      }
-  
-      if (!/^\d+$/.test(age)) {
-        alert("Введите корректное число.");
-        continue;
-      }
-  
-      const userAge = parseInt(age, 10);
-  
-      if (userAge <= 0) {
-        alert("Возраст должен быть положительным числом.");
-        continue;
-      }
-  
-      confirmed = confirm(`Вы уверены, что вам ${userAge} лет?`);
+  const resultElement = document.getElementById("result");
+  let ageInput;
+
+  while (true) {
+    ageInput = prompt("Введите ваш возраст:");
+
+    if (ageInput === null) {
+      resultElement.textContent = "Ввод отменён.";
+      resultElement.style.color = "#ff6666";
+      return;
     }
-  
-    document.getElementById("result").textContent = `Вам ${age} лет. Спасибо за подтверждение!`;
+
+    const age = parseInt(ageInput);
+
+    if (!isNaN(age) && age >= 0) {
+      const isCorrect = confirm(`Вам ${age} лет?`);
+
+      if (isCorrect) {
+        resultElement.textContent = `Возраст подтверждён: ${age}`;
+        resultElement.style.color = "#00ffff";
+        break;
+      } else {
+        continue;
+      }
+    } else {
+      if (confirm("Неверное значение. Хотите попробовать снова?")) {
+        continue;
+      } else {
+        resultElement.textContent = "Ввод прерван пользователем.";
+        resultElement.style.color = "#ff6666";
+        break;
+      }
+    }
   }
+}

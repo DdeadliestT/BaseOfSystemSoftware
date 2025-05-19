@@ -12,44 +12,88 @@
       justify-content: center;
       margin-top: 20px;
     }
-
+  
     .digit,
     .operator {
       padding: 15px;
       font-size: 18px;
       text-align: center;
       cursor: pointer;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
+      background-color: #1a1a2e;
+      color: #00ffff;
+      border: 2px solid #00ffff;
       border-radius: 5px;
+      transition: all 0.3s ease;
     }
-
+  
     .digit:hover,
     .operator:hover {
-      background-color: #ddd;
+      background-color: #00ffff;
+      color: #0f0f1a;
+      box-shadow: 0 0 10px #00ffff;
     }
-
-    #result {
-      grid-column: span 5;
+  
+    input[type="text"] {
+      width: 100px;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #444;
+      background-color: #0f0f1a;
+      color: #ccc;
       text-align: center;
+      margin-bottom: 15px;
+    }
+  
+    #opDisplay {
+      font-size: 20px;
+      color: #00ffff;
+      min-width: 20px;
+      margin: 0 10px;
+    }
+  
+    #result {
+      margin-top: 20px;
       padding: 15px;
       font-size: 20px;
-      border: 2px solid #333;
-      margin-top: 20px;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      border: 2px solid #444;
+      color: #ccc;
+      background-color: #1a1a1a;
+      border-left: 3px solid #888;
+    }
+  
+    #result.red {
+      background-color: #2e1a1a;
+      color: #ff6666;
+      border-left: 3px solid #ff6666;
     }
   </style>
 </head>
 <body>
+  <div class="back-button" onclick="window.history.back()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    Назад
+  </div>
+
   <header>
-    <h1>Лабораторные работы по ОСПО</h1>
+    <h1>Лабораторная работа №3<br>Задание на повышенную оценку</h1>
   </header>
 
   <div class="container">
-    <h2>Калькулятор</h2>
+    <h2 class="title">Калькулятор</h2>
 
-    <input type="text" id="num1" placeholder="Число 1" style="width: 100px;" readonly />
-    <span id="opDisplay" style="margin: 0 10px; font-size: 20px;"></span>
-    <input type="text" id="num2" placeholder="Число 2" style="width: 100px;" readonly />
+    <div style="text-align: center;">
+      <input type="text" id="num1" placeholder="Число 1" readonly />
+      <span id="opDisplay"></span>
+      <input type="text" id="num2" placeholder="Число 2" readonly />
+    </div>
 
     <div id="result">Результат</div>
 
@@ -72,7 +116,7 @@
       <div class="digit" onclick="clearAll()">C</div>
       <div class="operator" onclick="calculate()">=</div>
 
-      <div class="digit" onclick="addDigit('0')" style="grid-column: span 2;">0</div>
+      <div class="digit" onclick="addDigit('0')" style="grid-column: span 3;">0</div>
     </div>
   </div>
 

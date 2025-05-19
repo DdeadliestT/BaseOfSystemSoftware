@@ -5,23 +5,39 @@ function setValue(value) {
   const num = parseInt(value);
 
   if (isNaN(num) || num < 0 || num > 9) {
-    alert("Введите число от 0 до 9.");
+    showMessage("Введите число от 0 до 9.", "error");
     return;
   }
 
-  // Сброс предыдущего значения
   ticks.forEach(tick => tick.classList.remove('active'));
 
-  // Установка нового значения
-  currentValue = num;
-  for (let i = 0; i <= currentValue; i++) {
+  for (let i = 0; i < num; i++) {
     ticks[i].classList.add('active');
   }
 
-  // Изменение стиля при значении > 5
-  if (currentValue > 5) {
-    document.body.classList.add('red-bg');
+  if (num > 5) {
+    document.getElementById("indicator").style.borderColor = "#ff6666";
+    showMessage("Значение больше 5", "error");
   } else {
-    document.body.classList.remove('red-bg');
+    document.getElementById("indicator").style.borderColor = "#444";
+    showMessage(`Значение установлено: ${num}`, "success");
   }
+}
+
+function showMessage(message, type = "default") {
+  const result = document.getElementById("resultMessage");
+  result.textContent = message;
+
+  if (type === "error") {
+    result.classList.add("red");
+  } else {
+    result.classList.remove("red");
+  }
+}
+
+function clearValue() {
+  ticks.forEach(tick => tick.classList.remove('active'));
+  currentValue = -1;
+  document.getElementById("indicator").style.borderColor = "#444";
+  showMessage("Значение сброшено.");
 }

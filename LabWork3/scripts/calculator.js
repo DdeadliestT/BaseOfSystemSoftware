@@ -21,7 +21,7 @@ function setOperator(op) {
 
 function calculate() {
   if (num1 === '' || num2 === '' || operator === null) {
-    alert("Заполните оба числа и выберите операцию.");
+    document.getElementById("result").textContent = "Заполните оба числа и выберите операцию";
     return;
   }
 
@@ -36,15 +36,13 @@ function calculate() {
     case '/': result = b !== 0 ? a / b : 'Ошибка'; break;
   }
 
-  const resultDiv = document.getElementById("result");
+  const resultElement = document.getElementById("result");
   if (result > 15) {
-    resultDiv.textContent = "число>15";
-    resultDiv.style.backgroundColor = "red";
-    resultDiv.style.color = "white";
+    resultElement.textContent = "число>15";
+    resultElement.classList.add("red");
   } else {
-    resultDiv.textContent = result;
-    resultDiv.style.backgroundColor = "";
-    resultDiv.style.color = "";
+    resultElement.textContent = result;
+    resultElement.classList.remove("red");
   }
 }
 
@@ -56,5 +54,5 @@ function clearAll() {
   document.getElementById("num2").value = '';
   document.getElementById("opDisplay").textContent = '';
   document.getElementById("result").textContent = 'Результат';
-  document.getElementById("result").style.backgroundColor = "";
+  document.getElementById("result").classList.remove("red");
 }
