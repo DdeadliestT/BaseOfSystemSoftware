@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-stty -echo
-
 # создание new catalog
 mkdir firstcat
 
