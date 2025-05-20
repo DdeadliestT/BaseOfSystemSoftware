@@ -158,3 +158,17 @@ button.submit-btn:hover {
         font-size: 14px;
     }
 }
+
+.profile-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
