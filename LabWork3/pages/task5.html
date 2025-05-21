@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <div class="back-button" onclick="window.history.back()">
+  <div class="back-button" onclick="window.location.href='../lab3.html'">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"></line>
       <polyline points="12 19 5 12 12 5"></polyline>
@@ -22,14 +22,18 @@
       <img src="../images/profile-cat.jpg" alt="Фото Ильи Фомина" />
     </div>
     <h1 style="text-align: center;">Фомин Илья Дмитриевич</h1>
-    <p style="text-align: center; font-size: 18px; color: #00ffff;">Junior Frontend Developer | Системное программирование | Git & GitHub</p>
+    <p style="text-align: center; font-size: 18px; color: #00ffff;">C++ Developer | Junior Frontend Developer</p>
   </header>
 
   <div class="resume-container">
     <!-- Обо мне -->
     <section id="about">
       <h2>Обо мне</h2>
-      <p>Студент МГТУ «СТАНКИН», специальность 15.03.04 «Автоматизация технологических процессов и производств». Изучаю системное программирование, командную строку, Git, Bash, JavaScript, HTML/CSS. Увлекаюсь автоматизацией задач и разработкой пользовательских интерфейсов.</p>
+      <p>Участвую в олимпиадах по автоматизации и информатизации, соревнованиях CTF.
+        Интересуюсь разработкой ПО под мобильные устройства, пентестингом, реверс-инжинирингом ПО.
+        Изучаю паттерны проектирования, а так ж е тактики и стратегии кибербезопасности.
+        Желаю углублять и развивать навыки разработки ПО и безопасности приложений.
+      </p>
     </section>
 
     <!-- Опыт работы -->
@@ -37,16 +41,16 @@
       <h2>Опыт работы</h2>
 
       <div class="job">
-        <p class="job-title">Frontend Developer (стажировка)</p>
-        <p class="job-company">ООО «ВебЛаб» | 2024 – н.в.</p>
-        <p class="job-description">Работал над созданием интерфейсов на HTML, CSS и JavaScript. Участвовал в тестировании и оптимизации кода. Использование Git для контроля версий.</p>
+        <p class="job-title">C++ Developer (практика)</p>
+        <p class="job-company">ООО «СДЛ-Софт» | 2025</p>
+        <p class="job-description"></p>
         <button class="toggle-btn" onclick="toggleDescription(this)">Показать больше</button>
       </div>
 
       <div class="job">
-        <p class="job-title">Инженер по автоматизации</p>
-        <p class="job-company">ООО «Автоматика» | 2023 – 2024</p>
-        <p class="job-description">Создание bash-скриптов для автоматизации сборки проектов. Работа с системным ПО Windows и Linux. Настройка среды разработки.</p>
+        <p class="job-title">Intern</p>
+        <p class="job-company">LinksPlatform | 2022 – 2023</p>
+        <p class="job-description">Занимался документированием кода и устранением ошибок (использовал язык программирования C#).</p>
         <button class="toggle-btn" onclick="toggleDescription(this)">Показать больше</button>
       </div>
     </section>
@@ -56,7 +60,7 @@
       <h2>Образование</h2>
       <ul>
         <li><strong>МГТУ «СТАНКИН»</strong>, 2022–2026</li>
-        <li><strong>IT-курсы</strong>, 2024</li>
+        <li><strong>Университет Иннополис "2023 Data Science"</strong>, 2023-2024</li>
       </ul>
     </section>
 
@@ -64,14 +68,24 @@
     <section id="skills">
       <h2>Навыки</h2>
       <div class="skills-grid">
+        <div class="skill-tag">C++</div>
+        <div class="skill-tag">Python</div>
+        <div class="skill-tag">C#</div>
+        <div class="skill-tag">Rust</div>
         <div class="skill-tag">HTML</div>
         <div class="skill-tag">CSS</div>
         <div class="skill-tag">JavaScript</div>
-        <div class="skill-tag">Git / GitHub</div>
-        <div class="skill-tag">Bash / Shell</div>
-        <div class="skill-tag">Windows CLI</div>
-        <div class="skill-tag">Soft Skills</div>
-        <div class="skill-tag">Работа в команде</div>
+        <div class="skill-tag">Git</div>
+        <div class="skill-tag">CMake</div>
+        <div class="skill-tag">Bash</div>
+        <div class="skill-tag">SFML</div>
+        <div class="skill-tag">WPF</div>
+        <div class="skill-tag">MFC</div>
+        <div class="skill-tag">WinAPI</div>
+        <div class="skill-tag">macOS</div>
+        <div class="skill-tag">Windows</div>
+        <div class="skill-tag">Linux</div>
+        <div class="skill-tag">MySQL</div>
       </div>
     </section>
 
@@ -79,10 +93,10 @@
     <section id="contacts">
       <h2>Связаться со мной</h2>
       <p class="contact-links">
-        <a href="#">Email</a> |
-        <a href="#">Telegram</a> |
-        <a href="#">LinkedIn</a> |
-        <a href="#">GitHub</a>
+        <a href="mailto:fomin_ilya_d@mail.ru">Email</a> |
+        <a href="https://t.me/def_ult">Telegram</a> |
+        <a href="https://career.habr.com/ddeadliestt">Habr</a> |
+        <a href="https://github.com/DdeadliestT/">GitHub</a>
       </p>
 
       <form class="contact-form" onsubmit="submitForm(event)">
@@ -99,7 +113,7 @@
       </form>
 
       <p style="margin-top: 20px; text-align: center;">
-        <a href="#" download>Скачать резюме (PDF)</a>
+        <a href="https://www.dropbox.com/scl/fi/pzv0jjm44j5nnjfneu44v/Resume_Fomin_ID.pdf?rlkey=9ot4i996fim92t9xn66hupxo4&st=h2x7ud2r&dl=0" download>Скачать резюме (PDF)</a>
       </p>
     </section>
   </div>
