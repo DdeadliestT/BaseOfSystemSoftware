@@ -49,7 +49,7 @@ function openInNewWindow() {
     <head>
       <meta charset="UTF-8">
       <title>Титульный лист</title>
-      <link rel="icon" href="https://raw.githubusercontent.com/DdeadliestT/BaseOfSystemSoftware/master/LabWork3/images/logo_stankin_without_word.ico" type="image/x-icon">
+      <link rel="icon" href="https://raw.githubusercontent.com/DdeadliestT/BaseOfSystemSoftware/refs/heads/master/LabWork3/images/logo_stankin_without_word.ico" type="image/x-icon">
       <style>
         body {
           font-family: 'Times New Roman', serif;
