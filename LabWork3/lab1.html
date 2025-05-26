@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>Лабораторная работа №1</title>
@@ -42,12 +43,30 @@
     }
 
     /* === Уровни активности === */
-    .level-0 { background-color: #2A2A2A; } /* Нет коммитов */
-    .level-1 { background-color: #00ffff10; }
-    .level-2 { background-color: #00ffff44; }
-    .level-3 { background-color: #00ffff88; }
-    .level-4 { background-color: #00ffffcc; }
-    .level-5 { background-color: #00ffff; }
+    .level-0 {
+      background-color: #2A2A2A;
+    }
+
+    /* Нет коммитов */
+    .level-1 {
+      background-color: #00ffff10;
+    }
+
+    .level-2 {
+      background-color: #00ffff44;
+    }
+
+    .level-3 {
+      background-color: #00ffff88;
+    }
+
+    .level-4 {
+      background-color: #00ffffcc;
+    }
+
+    .level-5 {
+      background-color: #00ffff;
+    }
 
     /* === Легенда === */
     .commit-legend {
@@ -71,11 +90,25 @@
       border-radius: 2px;
     }
 
-    .legend-item.activity-level-1 span { background-color: #2A2A2A; }
-    .legend-item.activity-level-2 span { background-color: #18283B; }
-    .legend-item.activity-level-3 span { background-color: #00ffff88; }
-    .legend-item.activity-level-4 span { background-color: #00ffffcc; }
-    .legend-item.activity-level-5 span { background-color: #00ffff; }
+    .legend-item.activity-level-1 span {
+      background-color: #2A2A2A;
+    }
+
+    .legend-item.activity-level-2 span {
+      background-color: #18283B;
+    }
+
+    .legend-item.activity-level-3 span {
+      background-color: #00ffff88;
+    }
+
+    .legend-item.activity-level-4 span {
+      background-color: #00ffffcc;
+    }
+
+    .legend-item.activity-level-5 span {
+      background-color: #00ffff;
+    }
 
     /* === Список коммитов === */
     .commit-list {
@@ -128,9 +161,11 @@
     }
   </style>
 </head>
+
 <body>
   <div class="back-button" onclick="window.location.href='index.html'">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"></line>
       <polyline points="12 19 5 12 12 5"></polyline>
     </svg>
@@ -167,16 +202,16 @@
     let commitPage = 1;
     const commitsPerPage = 10;
     let totalCommits = [];
-  
+
     // === 1. Загрузить все коммиты для сетки активности ===
     async function fetchAllCommitsForGrid() {
       const url = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=100`;
-  
+
       try {
         const res = await fetch(url);
         if (!res.ok) throw new Error("Ошибка загрузки всех коммитов");
         const data = await res.json();
-  
+
         return data.map(commit => ({
           message: commit.commit.message,
           date: new Date(commit.commit.author.date),
@@ -188,15 +223,15 @@
         return [];
       }
     }
-  
+
     // === 2. Загрузить порцию коммитов для истории ===
     async function fetchCommits(page = 1) {
       const url = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?page=${page}&per_page=${commitsPerPage}`;
-  
+
       try {
         const res = await fetch(url);
         if (!res.ok) throw new Error("Ошибка загрузки");
-  
+
         const data = await res.json();
         return data.map(commit => ({
           message: commit.commit.message,
@@ -210,16 +245,16 @@
         return [];
       }
     }
-  
+
     // === 3. Отображаем первые коммиты при инициализации ===
     function displayInitialCommits(commits) {
       const list = document.getElementById('commitList');
       list.innerHTML = "";
-  
+
       commits.forEach(commit => {
         const item = document.createElement('div');
         item.className = 'commit-item';
-  
+
         item.innerHTML = `
           <a href="${commit.link}" target="_blank" class="commit-message">${commit.message}</a>
           <div class="commit-date">
@@ -230,23 +265,23 @@
         list.appendChild(item);
       });
     }
-  
+
     // === 4. Подгрузка новых порций коммитов по кнопке "Показать ещё" ===
     async function loadCommits() {
       const list = document.getElementById('commitList');
       const btn = document.getElementById('loadMoreBtn');
-  
+
       const newCommits = await fetchCommits(commitPage);
-  
+
       if (newCommits.length === 0) {
         btn.style.display = 'none';
         return;
       }
-  
+
       newCommits.forEach(commit => {
         const item = document.createElement('div');
         item.className = 'commit-item';
-  
+
         item.innerHTML = `
           <a href="${commit.link}" target="_blank" class="commit-message">${commit.message}</a>
           <div class="commit-date">
@@ -256,38 +291,38 @@
         `;
         list.appendChild(item);
       });
-  
+
       totalCommits.push(...newCommits);
       commitPage++;
-  
+
       // Если больше коммитов нет → убираем кнопку
       if (newCommits.length < commitsPerPage) {
         btn.style.display = 'none';
       }
     }
-  
+
     // === 4. Строим сетку активности за последние 42 дня ===
     function buildCommitGrid(commits) {
       const grid = document.getElementById('commitGrid');
       grid.innerHTML = "";
-  
+
       const today = new Date();
       const days = 42;
       const activityMap = {};
-  
+
       // Подсчёт количества коммитов по дням
       commits.forEach(commit => {
         const dateStr = commit.date.toISOString().split('T')[0];
         activityMap[dateStr] = (activityMap[dateStr] || 0) + 1;
       });
-  
+
       for (let i = 0; i < days; i++) {
         const day = new Date(today);
         day.setDate(today.getDate() - i);
-  
+
         const dateStr = day.toISOString().split('T')[0];
         const count = activityMap[dateStr] || 0;
-  
+
         const cell = document.createElement('div');
         const level = count === 0 ? 0 : Math.min(count, 5);
         cell.className = `commit-day level-${level}`;
@@ -302,18 +337,18 @@
             cell.onclick = () => window.open(commitOfDay.link, '_blank');
           }
         }
-  
+
         grid.appendChild(cell);
       }
     }
-  
+
     // === 5. Инициализация при загрузке ===
     async function init() {
       const allCommits = await fetchAllCommitsForGrid();
       buildCommitGrid(allCommits);
-  
+
       const initialCommits = await fetchCommits(1);
-  
+
       if (initialCommits.length > 0) {
         displayInitialCommits(initialCommits);
         totalCommits = [...initialCommits];
@@ -322,8 +357,9 @@
         document.getElementById('loadMoreBtn').style.display = 'none';
       }
     }
-  
+
     window.onload = init;
   </script>
 </body>
+
 </html>

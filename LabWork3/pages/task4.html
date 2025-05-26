@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>Анкета</title>
@@ -11,14 +12,14 @@
       margin-right: auto;
       text-align: left;
     }
-  
+
     label {
       display: block;
       font-weight: bold;
       margin-top: 10px;
       color: #ccc;
     }
-  
+
     input[type="text"],
     input[type="number"] {
       width: 100%;
@@ -32,13 +33,13 @@
       transition: border-color 0.3s ease;
       margin-bottom: 15px;
     }
-  
+
     input:focus {
       outline: none;
       border-color: #888;
       box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     }
-  
+
     select {
       width: 100%;
       max-width: 100%;
@@ -51,30 +52,31 @@
       margin-bottom: 15px;
       transition: border-color 0.3s ease;
     }
-  
+
     select:focus {
       outline: none;
       border-color: #888;
       box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
     }
-  
+
     .checkbox-label {
       display: block;
       margin-top: 10px;
       color: #ccc;
     }
-  
+
     input[type="checkbox"] {
       margin-right: 10px;
-      accent-color: #00ffff; /* Неоновый цвет чекбокса */
+      accent-color: #00ffff;
+      /* Неоновый цвет чекбокса */
     }
-  
+
     .button-wrapper {
       display: flex;
       justify-content: center;
       margin-top: 20px;
     }
-  
+
     button {
       padding: 10px 20px;
       font-size: 16px;
@@ -85,13 +87,13 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-  
+
     button:hover {
       background-color: #3a3a3a;
       border-color: #aaa;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
-  
+
     #checkResult {
       margin-top: 20px;
       font-size: 18px;
@@ -108,13 +110,15 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>Лабораторная работа №3</h1>
   </header>
 
   <div class="back-button" onclick="window.history.back()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"></line>
       <polyline points="12 19 5 12 12 5"></polyline>
     </svg>
@@ -123,17 +127,17 @@
 
   <div class="container">
     <h2 class="title">Индивидуальное задание 4:<br>Анкета пользователя</h2>
-  
+
     <div class="form-container">
       <div id="formSection">
         <label class="checkbox-label">Имя:
           <input type="text" id="nameInput" placeholder="Фамилия" />
         </label>
-  
+
         <label class="checkbox-label">Возраст:
           <input type="number" id="ageInput" min="0" placeholder="Например: 20" />
         </label>
-  
+
         <label class="checkbox-label">Пол:
           <select id="genderInput">
             <option value="">Выберите...</option>
@@ -141,32 +145,32 @@
             <option value="Ж">Женский</option>
           </select>
         </label>
-  
+
         <label class="checkbox-label">
           <input type="checkbox" id="mathSkill"> Знание математики
         </label>
-  
+
         <label class="checkbox-label">
           <input type="checkbox" id="progSkill"> Знание программирования
         </label>
-  
+
         <label class="checkbox-label">
           <input type="checkbox" id="higherEdu"> Высшее образование
         </label>
-  
+
         <label class="checkbox-label">
           <input type="checkbox" id="agreeCheckbox"> Согласен с условиями
         </label>
-  
+
         <label class="checkbox-label">Комментарий:
           <input type="text" id="commentInput" placeholder="Дополнительные навыки..." />
         </label>
-  
+
         <div class="button-wrapper">
           <button id="submitBtn" onclick="submitForm()">Меня возьмут</button>
         </div>
       </div>
-  
+
       <div id="resultSection" style="display: none;">
         <h3>Результат проверки:</h3>
         <p id="checkResult">Здесь будет результат</p>
@@ -176,6 +180,7 @@
       </div>
     </div>
 
-  <script src="../scripts/task4.js"></script>
+    <script src="../scripts/task4.js"></script>
 </body>
+
 </html>

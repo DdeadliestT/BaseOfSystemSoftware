@@ -94,8 +94,15 @@ header {
 
 /* Анимация появления */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Контейнер с текстом */
@@ -134,8 +141,15 @@ header {
 }
 
 @keyframes cardFadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .title {
@@ -202,9 +216,12 @@ header {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: #1a1a2e; /* Темный фон кнопки */
-  color: #00ffff;       /* Неоново-бирюзовый текст */
-  border: 2px solid #00ffff; /* Обводка */
+  background: #1a1a2e;
+  /* Темный фон кнопки */
+  color: #00ffff;
+  /* Неоново-бирюзовый текст */
+  border: 2px solid #00ffff;
+  /* Обводка */
   padding: 10px 15px;
   font-size: 16px;
   border-radius: 8px;
@@ -223,13 +240,16 @@ header {
 }
 
 .back-button:hover {
-  background-color: #00ffff; /* Неоновый фон */
-  color: #0f0f1a;            /* Темный текст на светлом фоне */
+  background-color: #00ffff;
+  /* Неоновый фон */
+  color: #0f0f1a;
+  /* Темный текст на светлом фоне */
   box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
 }
 
 .back-button:hover svg {
-  stroke: #0f0f1a; /* Темный цвет иконки */
+  stroke: #0f0f1a;
+  /* Темный цвет иконки */
 }
 
 .code-wrapper {
@@ -348,6 +368,11 @@ header {
 }
 
 @keyframes timer-animation {
-  from { width: 100%; }
-  to { width: 0%; }
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
 }

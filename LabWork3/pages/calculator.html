@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>Калькулятор</title>
@@ -12,7 +13,7 @@
       justify-content: center;
       margin-top: 20px;
     }
-  
+
     .digit,
     .operator {
       padding: 15px;
@@ -25,14 +26,14 @@
       border-radius: 5px;
       transition: all 0.3s ease;
     }
-  
+
     .digit:hover,
     .operator:hover {
       background-color: #00ffff;
       color: #0f0f1a;
       box-shadow: 0 0 10px #00ffff;
     }
-  
+
     input[type="text"] {
       width: 100px;
       padding: 10px;
@@ -43,14 +44,14 @@
       text-align: center;
       margin-bottom: 15px;
     }
-  
+
     #opDisplay {
       font-size: 20px;
       color: #00ffff;
       min-width: 20px;
       margin: 0 10px;
     }
-  
+
     #result {
       margin-top: 20px;
       padding: 15px;
@@ -65,7 +66,7 @@
       background-color: #1a1a1a;
       border-left: 3px solid #888;
     }
-  
+
     #result.red {
       background-color: #2e1a1a;
       color: #ff6666;
@@ -73,9 +74,11 @@
     }
   </style>
 </head>
+
 <body>
   <div class="back-button" onclick="window.history.back()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"></line>
       <polyline points="12 19 5 12 12 5"></polyline>
     </svg>
@@ -122,4 +125,5 @@
 
   <script src="../scripts/calculator.js"></script>
 </body>
+
 </html>

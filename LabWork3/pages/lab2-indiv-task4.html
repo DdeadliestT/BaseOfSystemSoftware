@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <title>Объединенный скрипт</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 
   <header>
@@ -13,7 +15,8 @@
 
   <!-- Кнопка НАЗАД -->
   <div class="back-button" onclick="window.history.back()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
       <line x1="19" y1="12" x2="5" y2="12"></line>
       <polyline points="12 19 5 12 12 5"></polyline>
     </svg>
@@ -29,8 +32,8 @@
   </div>
 
   <div id="copy-notification" class="notification success">
-	<span id="notification-text"></span>
-	<div class="notification-timer"></div>
+    <span id="notification-text"></span>
+    <div class="notification-timer"></div>
   </div>
 
   <script src="../scripts/load-sh.js"></script>
@@ -38,37 +41,38 @@
     // Загрузить конкретный .sh файл
     fetchScript('https://raw.githubusercontent.com/DdeadliestT/BaseOfSystemSoftware/master/LabWork2/Individual/create_and_delete_all.sh', 'code-placeholder');
 
-	function copyCode() {
-	const code = document.getElementById("code-placeholder").textContent;
-	const notification = document.getElementById("copy-notification");
+    function copyCode() {
+      const code = document.getElementById("code-placeholder").textContent;
+      const notification = document.getElementById("copy-notification");
 
-	navigator.clipboard.writeText(code)
-		.then(() => {
-		showNotification("Скрипт скопирован", "success");
-		})
-		.catch(err => {
-		showNotification("Не удалось скопировать: " + err.message, "error");
-		});
-	}
+      navigator.clipboard.writeText(code)
+        .then(() => {
+          showNotification("Скрипт скопирован", "success");
+        })
+        .catch(err => {
+          showNotification("Не удалось скопировать: " + err.message, "error");
+        });
+    }
 
-	function showNotification(message, type = "success") {
-		const notification = document.getElementById("copy-notification");
-		const timerBar = notification.querySelector(".notification-timer");
+    function showNotification(message, type = "success") {
+      const notification = document.getElementById("copy-notification");
+      const timerBar = notification.querySelector(".notification-timer");
 
-		// Update text
-		notification.querySelector("#notification-text").textContent = message;
-		notification.className = `notification ${type}`;
-		notification.classList.add('show');
+      // Update text
+      notification.querySelector("#notification-text").textContent = message;
+      notification.className = `notification ${type}`;
+      notification.classList.add('show');
 
-		// Time bar
-		timerBar.style.animation = 'none';
-		void timerBar.offsetWidth;
-		timerBar.style.animation = 'timer-animation 2s linear forwards';
+      // Time bar
+      timerBar.style.animation = 'none';
+      void timerBar.offsetWidth;
+      timerBar.style.animation = 'timer-animation 2s linear forwards';
 
-		setTimeout(() => {
-		notification.classList.remove('show');
-		}, 2000);
-	}
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 2000);
+    }
   </script>
 </body>
+
 </html>
